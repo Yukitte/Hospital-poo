@@ -3,7 +3,7 @@ package br.com.controle;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class ContaCorrente extends Conta {
+public class ContaCorrente extends Conta{
     private double limite;
     private LocalDate dataVencimento;
 

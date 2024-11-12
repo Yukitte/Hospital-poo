@@ -1,7 +1,7 @@
 package br.com.controle;
 
 //@author emanuelly
-public class Endereco {
+public class Endereco extends Cliente{
     String cep;
     String local;
     int numeroCasa;
@@ -32,7 +32,7 @@ public class Endereco {
     public void setBairro(String bairro) {
             this.bairro = bairro;
     }
-    public String getCidade() {
+    public String getCidade(String text) {
             return cidade;
     }
     public void setCidade(String cidade) {

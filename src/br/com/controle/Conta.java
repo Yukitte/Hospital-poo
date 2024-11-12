@@ -1,7 +1,7 @@
 package br.com.controle;
 
 //@author emanuelly
-public abstract class Conta {
+public abstract class Conta extends Cliente{
     private int numero_conta;
     private String agencia_conta;
     private String tipo_conta;

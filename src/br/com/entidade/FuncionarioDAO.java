@@ -49,7 +49,7 @@ public class FuncionarioDAO {
                 pste.setString(2, e.getLocal());
                 pste.setInt(3, e.getNumeroCasa());
                 pste.setString(4, e.getBairro());
-                pste.setString(5, e.getCidade());
+                pste.setString(5, e.getCidade(jTcidade.getText()));
                 pste.setString(6, e.getUf());
                 pste.setInt(7, idUsuario);
                 pste.executeUpdate();
