@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import br.com.controle.Endereco;
+import java.util.ArrayList;
 
 //@author emanuelly
 public class FuncionarioDAO {
@@ -80,6 +81,53 @@ public class FuncionarioDAO {
     } catch (SQLException e){
         e.printStackTrace();
     }
+}
+    
+    public static ArrayList<Funcionario> findAll() throws Exception {
+    ArrayList<Funcionario> funcionarios = new ArrayList<>();
+
+    String queryCliente = "SELECT * FROM Funcionario";
+    String queryUser = "SELECT * FROM Usuario WHERE id_usuario = ?";
+    
+    try (Connection con = DAO.conectar()) {
+        PreparedStatement pst = con.prepareStatement(queryCliente);
+        ResultSet rs = pst.executeQuery();
+        
+        while (rs.next()) { // Use um loop para adicionar clientes à lista
+            Funcionario func = new Funcionario();
+            
+            int id = rs.getInt("fk_usuario_id");
+            func.setCargo(rs.getString("cargo_funcionario"));
+            func.setCodigo_funcionario(rs.getString("codigo_funcionario"));
+            
+            PreparedStatement pst1 = con.prepareStatement(queryUser);
+            pst1.setInt(1, id);
+            ResultSet rs1 = pst1.executeQuery(); 
+            
+            while (rs1.next()) {
+                func.setId_usuario(rs1.getInt("id_usuario"));
+                func.setNome_usuario(rs1.getString("nome_usuario"));
+                func.setCpf_usuario(rs1.getString("cpf_usuario"));
+                func.setNascimento_usuario(LocalDate.parse(String.valueOf((rs1.getDate("nascimento_usuario")))));
+                func.setTelefone_usuario(rs1.getString("telefone_usuario"));
+                func.setTipo_usuario(rs1.getString("tipo_usuario"));
+                func.setSenha_funcionario(rs1.getString("senha_usuario"));
+                func.setUser_usuario(rs1.getString("user_usuario"));
+
+                funcionarios.add(func); // Adicione o cliente à lista
+            }
+        }
+        
+        DAO.desconectar(con);
+
+        if (funcionarios.isEmpty()) {
+            System.out.print("Erro: Nenhum cliente encontrado");
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return funcionarios;
 }
 
     public static Funcionario findByUser(String user) throws Exception {

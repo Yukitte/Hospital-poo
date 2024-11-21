@@ -31,10 +31,8 @@ public class TesteConta {
 //        ContaCorrente c = (ContaCorrente) ContaDAO.findByClienteId(2);
 //        System.out.println(" "+ c.getAgencia_conta());    
         
-        ContaCorrente c = new ContaCorrente();
-        c.setNumero_conta(202020);
         
-        boolean confirma = ContaDAO.delete(c);
+        boolean confirma = ContaDAO.delete(1);
         System.out.println(" "+ confirma);
     
     }

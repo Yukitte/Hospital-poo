@@ -207,6 +207,7 @@ public class ContaDAO {
                     c.setAgencia_conta(rs.getString("agencia_conta"));
                     c.setSaldo_conta(rs.getDouble("saldo"));
                     c.setTipo_conta(tipo);
+                    c.setNumero_conta(rs.getInt("numero_conta"));
                     int fk_cliente = rs.getInt("fk_cliente_id");
 
                     Cliente cliente = ClienteDAO.findById(fk_cliente);
@@ -234,6 +235,7 @@ public class ContaDAO {
                     c.setAgencia_conta(rs.getString("agencia_conta"));
                     c.setSaldo_conta(rs.getDouble("saldo"));
                     c.setTipo_conta(tipo);
+                    c.setNumero_conta(rs.getInt("numero_conta"));
                     int fk_cliente = rs.getInt("fk_cliente_id");
 
                     Cliente cliente = ClienteDAO.findById(fk_cliente);
@@ -263,18 +265,17 @@ public class ContaDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            
         }
         return null;
-    } 
+    }
    
-   public static boolean delete(Conta conta) {
+   public static boolean delete(int key) {
         boolean confirma = false;
        
         String QueryContaSelect = "SELECT * FROM Conta WHERE numero_conta = ?";
         String QueryContaDelete = "DELETE FROM Conta WHERE id_conta = ?";
-            
-        int key = conta.getNumero_conta();
-        
+                    
         try (Connection con = DAO.conectar()) { 
             con.setAutoCommit(false);
             
@@ -350,5 +351,70 @@ public class ContaDAO {
         
         return confirma;
    }
+   
+   public static boolean updateSaldoAdd(int numero, double valor) throws Exception {
+        boolean confirma = false;
+               
+        String queryUpadate = "UPDATE Conta"
+                + " SET saldo = saldo + ?"
+                + " WHERE numero_conta = ?"; 
+        
+        try (Connection con = DAO.conectar()) {
+            con.setAutoCommit(false);
+            
+            PreparedStatement pst = con.prepareStatement(queryUpadate);
+            pst.setDouble(1, valor);
+            pst.setInt(2, numero);
+            int rows = pst.executeUpdate();
+            
+            if (rows > 0) {
+                System.out.println("Saldo update add realizado!");
+                con.commit();
+                confirma = true;
+                DAO.desconectar(con);
+            } else {
+                System.out.println("Erro ao realizar o update add");
+                con.rollback();
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return confirma;
+    }
+   
+    public static boolean updateSaldoMinus(int numero, double valor) throws Exception {
+        boolean confirma = false;
+        String queryUpadate = "UPDATE Conta"
+                + " SET saldo = saldo - ?"
+                + " WHERE numero_conta = ?"; 
+        
+        try (Connection con = DAO.conectar()) {
+            con.setAutoCommit(false);
+            
+            System.out.println(" Cont: " + numero + "- valor" + valor);
+            
+            PreparedStatement pst = con.prepareStatement(queryUpadate);
+            pst.setDouble(1, valor);
+            pst.setInt(2, numero);
+            int rows = pst.executeUpdate();
+            
+            if (rows > 0) {
+                System.out.println("Saldo update minus realizado!");
+                con.commit();
+                confirma = true;
+                DAO.desconectar(con);
+            } else {
+                System.out.println("Erro ao realizar o update minus");
+                con.rollback();
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return confirma;
+    }
 }
         

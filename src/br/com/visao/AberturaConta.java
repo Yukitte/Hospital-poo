@@ -26,8 +26,10 @@ public class AberturaConta extends javax.swing.JFrame {
     Funcionario f = new Funcionario();
     
     //Creates new form abertura_conta
-    public AberturaConta() {
+    public AberturaConta(Funcionario user) {
         initComponents();
+        this.f = user;
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -63,10 +65,6 @@ public class AberturaConta extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jTtaxarendimento = new javax.swing.JTextField();
-        jMenu = new javax.swing.JMenuBar();
-        jMenu_func = new javax.swing.JMenu();
-        jMenu_cliente = new javax.swing.JMenu();
-        jMenu_sair = new javax.swing.JMenu();
 
         jLabel2.setText("jLabel2");
 
@@ -108,7 +106,7 @@ public class AberturaConta extends javax.swing.JFrame {
         jBsair.setBackground(new java.awt.Color(0, 0, 102));
         jBsair.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBsair.setForeground(new java.awt.Color(255, 255, 255));
-        jBsair.setText("    Sair    ");
+        jBsair.setText("Cancelar");
         jBsair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBsairActionPerformed(evt);
@@ -254,13 +252,13 @@ public class AberturaConta extends javax.swing.JFrame {
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jTnumConta, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))))
-                .addContainerGap(78, Short.MAX_VALUE))
+                            .addComponent(jLabel13)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jBregistrar)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(84, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBregistrar)
-                .addGap(81, 81, 81)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBsair)
@@ -301,80 +299,24 @@ public class AberturaConta extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBregistrar)
                     .addComponent(jBsair))
-                .addGap(18, 18, 18))
+                .addGap(32, 32, 32))
         );
-
-        jMenu_func.setText("Funcionário");
-        jMenu_func.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_funcMenuSelected(evt);
-            }
-        });
-        jMenu_func.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_funcActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_func);
-
-        jMenu_cliente.setText("Cliente");
-        jMenu_cliente.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_clienteMenuSelected(evt);
-            }
-        });
-        jMenu_cliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_clienteActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_cliente);
-
-        jMenu_sair.setText("Sair");
-        jMenu_sair.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_sairMenuSelected(evt);
-            }
-        });
-        jMenu_sair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_sairActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_sair);
-
-        setJMenuBar(jMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 470, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
         );
 
         pack();
@@ -430,38 +372,6 @@ public class AberturaConta extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jBregistrarActionPerformed
 
-    private void jBsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsairActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jBsairActionPerformed
-
-    private void jMenu_funcMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_funcMenuSelected
-        FuncionarioMenu fm = new FuncionarioMenu();
-        fm.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenu_funcMenuSelected
-
-    private void jMenu_funcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_funcActionPerformed
-
-    }//GEN-LAST:event_jMenu_funcActionPerformed
-
-    private void jMenu_clienteMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_clienteMenuSelected
-//        ClienteMenu c = new ClienteMenu();
-//        c.setVisible(true);
-//        this.dispose();
-    }//GEN-LAST:event_jMenu_clienteMenuSelected
-
-    private void jMenu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_clienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu_clienteActionPerformed
-
-    private void jMenu_sairMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_sairMenuSelected
-        System.exit(0);
-    }//GEN-LAST:event_jMenu_sairMenuSelected
-
-    private void jMenu_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_sairActionPerformed
-
-    }//GEN-LAST:event_jMenu_sairActionPerformed
-
     private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
         try {
             Cliente cliente = ClienteDAO.findByCpf(jTcpf.getText());
@@ -474,6 +384,12 @@ public class AberturaConta extends javax.swing.JFrame {
             Logger.getLogger(AberturaConta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBbuscarActionPerformed
+
+    private void jBsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsairActionPerformed
+        FuncionarioMenu fm = new FuncionarioMenu(f);
+        fm.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jBsairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -502,11 +418,13 @@ public class AberturaConta extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AberturaConta().setVisible(true);
+                //new AberturaConta().setVisible(true);
             }
         });
     }
@@ -530,10 +448,6 @@ public class AberturaConta extends javax.swing.JFrame {
     private javax.swing.JLabel jLerro;
     private javax.swing.JLabel jLnome;
     private javax.swing.JLabel jLuf;
-    private javax.swing.JMenuBar jMenu;
-    private javax.swing.JMenu jMenu_cliente;
-    private javax.swing.JMenu jMenu_func;
-    private javax.swing.JMenu jMenu_sair;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

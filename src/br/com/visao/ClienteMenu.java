@@ -24,22 +24,8 @@ public class ClienteMenu extends javax.swing.JFrame {
     public ClienteMenu(Cliente user) {
         this.userlogado = user;
         initComponents();
-        
-//        jLsaudacao.setText("Olá, " + this.userlogado.getNome_usuario());;
-        
-//        try {
-//            SessaoUsuarioLogado sessao = new SessaoUsuarioLogado();
-//            userlogado = sessao.buscarSessao();
-//            if (userlogado instanceof Cliente) {
-//                userlogado = (Cliente) userlogado;
-//            } else {
-//                System.out.println("usuário não é um cliente!");
-//            }
-//            
-//        } catch (IOException ex) {
-//            Logger.getLogger(ClienteMenu.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
+       
+       jLsaudacao.setText("Olá, " + this.userlogado.getNome_usuario());
     }
 
     @SuppressWarnings("unchecked")
@@ -51,14 +37,13 @@ public class ClienteMenu extends javax.swing.JFrame {
         jBsaque = new javax.swing.JButton();
         jBdeposito = new javax.swing.JButton();
         jBconsultar = new javax.swing.JButton();
-        jBlimite = new javax.swing.JButton();
         jBsair = new javax.swing.JButton();
         jLsaldo = new javax.swing.JLabel();
         jTBmostrarsaldo = new javax.swing.JToggleButton();
-        jMenu = new javax.swing.JMenuBar();
-        jMenu_func = new javax.swing.JMenu();
-        jMenu_cliente = new javax.swing.JMenu();
-        jMenu_sair = new javax.swing.JMenu();
+        jLsaudacao = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -76,19 +61,18 @@ public class ClienteMenu extends javax.swing.JFrame {
         jBdeposito.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBdeposito.setText("Depósito");
         jBdeposito.setName(""); // NOI18N
+        jBdeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBdepositoActionPerformed(evt);
+            }
+        });
 
         jBconsultar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBconsultar.setText("Consultar");
         jBconsultar.setName(""); // NOI18N
-
-        jBlimite.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jBlimite.setText("Limite");
-        jBlimite.setMaximumSize(new java.awt.Dimension(80, 23));
-        jBlimite.setMinimumSize(new java.awt.Dimension(80, 23));
-        jBlimite.setName(""); // NOI18N
-        jBlimite.addActionListener(new java.awt.event.ActionListener() {
+        jBconsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBlimiteActionPerformed(evt);
+                jBconsultarActionPerformed(evt);
             }
         });
 
@@ -113,113 +97,75 @@ public class ClienteMenu extends javax.swing.JFrame {
             }
         });
 
+        jLsaudacao.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jDesktopPane1.setLayer(jBsaque, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jBdeposito, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jBconsultar, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jBlimite, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jBsair, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLsaldo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jTBmostrarsaldo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jLsaudacao, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jBdeposito, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBlimite, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(92, 92, 92)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jBconsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBsaque, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(jLsaudacao, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(153, 153, 153)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTBmostrarsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addGap(58, 58, 58)
                                 .addComponent(jLsaldo))))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jBsair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addGap(54, 54, 54)
+                        .addComponent(jBdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jBconsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBsair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addComponent(jBsaque, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLsaudacao, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(jLsaldo)
                 .addGap(18, 18, 18)
                 .addComponent(jTBmostrarsaldo)
-                .addGap(18, 18, 18)
+                .addGap(116, 116, 116)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBdeposito)
+                    .addComponent(jBconsultar)
                     .addComponent(jBsaque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBlimite, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBconsultar))
-                .addGap(18, 18, 18)
+                .addGap(56, 56, 56)
                 .addComponent(jBsair)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
-        jMenu_func.setText("Funcionário");
-        jMenu_func.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_funcMenuSelected(evt);
-            }
-        });
-        jMenu_func.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_funcActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_func);
+        jMenu.setText("Opções");
 
-        jMenu_cliente.setText("Cliente");
-        jMenu_cliente.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_clienteMenuSelected(evt);
-            }
-        });
-        jMenu_cliente.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Logout");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_clienteActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu.add(jMenu_cliente);
+        jMenu.add(jMenuItem1);
 
-        jMenu_sair.setText("Sair");
-        jMenu_sair.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_sairMenuSelected(evt);
-            }
-        });
-        jMenu_sair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_sairActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_sair);
+        jMenuBar1.add(jMenu);
 
-        setJMenuBar(jMenu);
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,51 +177,27 @@ public class ClienteMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jDesktopPane1)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
         
-    private void jMenu_funcMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_funcMenuSelected
-        FuncionarioMenu f = new FuncionarioMenu();
-        f.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenu_funcMenuSelected
-
-    private void jMenu_funcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_funcActionPerformed
-
-    }//GEN-LAST:event_jMenu_funcActionPerformed
-
-    private void jMenu_clienteMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_clienteMenuSelected
-        // TODO add your handling code here:
-        //ClienteMenu c = new ClienteMenu();
-        //c.setVisible(true);
-        //this.dispose();
-    }//GEN-LAST:event_jMenu_clienteMenuSelected
-
-    private void jMenu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_clienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu_clienteActionPerformed
-
-    private void jMenu_sairMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_sairMenuSelected
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jMenu_sairMenuSelected
-
-    private void jMenu_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_sairActionPerformed
-
-    }//GEN-LAST:event_jMenu_sairActionPerformed
-
     private void jBsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsairActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jBsairActionPerformed
 
     private void jBsaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsaqueActionPerformed
-        // TODO add your handling code here:
+        try {
+            Sacar frame = new Sacar(userlogado);
+            frame.setVisible(true);
+            this.dispose();
+        } catch (Exception ex) {
+            Logger.getLogger(ClienteMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBsaqueActionPerformed
 
     private void jTBmostrarsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTBmostrarsaldoActionPerformed
@@ -298,9 +220,27 @@ public class ClienteMenu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTBmostrarsaldoActionPerformed
 
-    private void jBlimiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimiteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBlimiteActionPerformed
+    private void jBdepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBdepositoActionPerformed
+        try {
+            Depositar frame = new Depositar(userlogado);
+            frame.setVisible(true);
+            this.dispose();
+        } catch (Exception ex) {
+            Logger.getLogger(ClienteMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBdepositoActionPerformed
+
+    private void jBconsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBconsultarActionPerformed
+        ConsultaConta frame = new ConsultaConta(userlogado);
+        frame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jBconsultarActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Login2 frame = new Login2();
+        frame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,15 +257,14 @@ public class ClienteMenu extends javax.swing.JFrame {
     private javax.swing.ButtonGroup BG_cliente;
     private javax.swing.JButton jBconsultar;
     private javax.swing.JButton jBdeposito;
-    private javax.swing.JButton jBlimite;
     private javax.swing.JButton jBsair;
     private javax.swing.JButton jBsaque;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLsaldo;
-    private javax.swing.JMenuBar jMenu;
-    private javax.swing.JMenu jMenu_cliente;
-    private javax.swing.JMenu jMenu_func;
-    private javax.swing.JMenu jMenu_sair;
+    private javax.swing.JLabel jLsaudacao;
+    private javax.swing.JMenu jMenu;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JToggleButton jTBmostrarsaldo;
     // End of variables declaration//GEN-END:variables
 }

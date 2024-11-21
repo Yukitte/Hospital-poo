@@ -89,27 +89,38 @@ public class ClienteDAO {
                 e.printStackTrace();
         }
     }
-    public static ArrayList<Cliente> findByall(String user) throws Exception {
+    public static ArrayList<Cliente> findAll() throws Exception {
     ArrayList<Cliente> clientes = new ArrayList<>();
 
-    String queryUser = "SELECT * FROM Usuario WHERE user_usuario = ?";
+    String queryCliente = "SELECT * FROM Cliente";
+    String queryUser = "SELECT * FROM Usuario WHERE id_usuario = ?";
+    
     try (Connection con = DAO.conectar()) {
-        PreparedStatement pst = con.prepareStatement(queryUser);
-        pst.setString(1, user);
+        PreparedStatement pst = con.prepareStatement(queryCliente);
         ResultSet rs = pst.executeQuery();
 
         while (rs.next()) { // Use um loop para adicionar clientes à lista
-            Cliente c = new Cliente();
-            c.setId_usuario(rs.getInt("id_usuario"));
-            c.setNome_usuario(rs.getString("nome_usuario"));
-            c.setCpf_usuario(rs.getString("cpf_usuario"));
-            c.setNascimento_usuario(LocalDate.parse(String.valueOf((rs.getDate("nascimento_usuario")))));
-            c.setTelefone_usuario(rs.getString("telefone_usuario"));
-            c.setTipo_usuario(rs.getString("tipo_usuario"));
-            c.setSenha_cliente(rs.getString("senha_usuario"));
-            c.setUser_usuario(rs.getString("user_usuario"));
-            clientes.add(c); // Adicione o cliente à lista
+            int id = rs.getInt("fk_usuario_id");
+            PreparedStatement pst1 = con.prepareStatement(queryUser);
+            pst1.setInt(1, id);
+            ResultSet rs1 = pst1.executeQuery();  
+            
+            while (rs1.next()) {
+                Cliente c = new Cliente();
+                c.setId_usuario(rs1.getInt("id_usuario"));
+                c.setNome_usuario(rs1.getString("nome_usuario"));
+                c.setCpf_usuario(rs1.getString("cpf_usuario"));
+                c.setNascimento_usuario(LocalDate.parse(String.valueOf((rs1.getDate("nascimento_usuario")))));
+                c.setTelefone_usuario(rs1.getString("telefone_usuario"));
+                c.setTipo_usuario(rs1.getString("tipo_usuario"));
+                c.setSenha_cliente(rs1.getString("senha_usuario"));
+                c.setUser_usuario(rs1.getString("user_usuario"));
+
+                clientes.add(c); // Adicione o cliente à lista
+            }
         }
+        
+        DAO.desconectar(con);
 
         if (clientes.isEmpty()) {
             System.out.print("Erro: Nenhum cliente encontrado");

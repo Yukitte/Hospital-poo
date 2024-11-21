@@ -122,27 +122,27 @@ public class ContaAlterar extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        AlterarDados frame = new AlterarDados();
-        frame.setVisible(true);
-        this.dispose();
+//        AlterarDados frame = new AlterarDados();
+//        frame.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  try {
-    ContaCorrente c = new ContaCorrente();
-    ContaDAO b = new ContaDAO();
-    c.setNumero_conta(Integer.valueOf(jTidconta.getText())); 
-    jTlimite.setText(String.valueOf(c.getLimite())); 
-    jTdatavencimento.setText(c.getDataVencimento().toString()); 
-    b.editarContaCorrente(c);
-    
-    jTlimite.setText("");
-    jTdatavencimento.setText("");
-    jTidconta.setText("");
-    jTidconta.requestFocus();
-} catch (Exception e) {
-    System.out.println("Erro: " + e.getMessage());
-}
+//  try {
+//    ContaCorrente c = new ContaCorrente();
+//    ContaDAO b = new ContaDAO();
+//    c.setNumero_conta(Integer.valueOf(jTidconta.getText())); 
+//    jTlimite.setText(String.valueOf(c.getLimite())); 
+//    jTdatavencimento.setText(c.getDataVencimento().toString()); 
+//    b.editarContaCorrente(c);
+//    
+//    jTlimite.setText("");
+//    jTdatavencimento.setText("");
+//    jTidconta.setText("");
+//    jTidconta.requestFocus();
+//} catch (Exception e) {
+//    System.out.println("Erro: " + e.getMessage());
+//}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -170,6 +170,7 @@ public class ContaAlterar extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ContaAlterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

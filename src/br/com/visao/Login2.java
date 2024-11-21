@@ -3,6 +3,7 @@ package br.com.visao;
 import br.com.controle.Cliente;
 import br.com.controle.Funcionario;
 import br.com.entidade.ClienteDAO;
+import br.com.entidade.FuncionarioDAO;
 import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.util.logging.Level;
@@ -10,10 +11,10 @@ import java.util.logging.Logger;
 import javax.swing.*;
 
 //@author User
-public class Login extends javax.swing.JFrame {
-
+public class Login2 extends javax.swing.JFrame {
+    
     //Creates new form tela
-    public Login() {
+    public Login2() {
         initComponents();
     }
 
@@ -36,10 +37,6 @@ public class Login extends javax.swing.JFrame {
         jRcliente = new javax.swing.JRadioButton();
         jPsenha = new javax.swing.JPasswordField();
         jBcadastrar = new javax.swing.JButton();
-        jMenu = new javax.swing.JMenuBar();
-        jMenu_func = new javax.swing.JMenu();
-        jMenu_cliente = new javax.swing.JMenu();
-        jMenu_sair = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -47,17 +44,24 @@ public class Login extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 500));
 
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(600, 300));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Sitka Text", 3, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Banco Malvader");
 
+        jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Usuário");
 
+        jLabel2.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Senha");
 
+        jBlogin.setBackground(new java.awt.Color(51, 51, 255));
+        jBlogin.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jBlogin.setForeground(new java.awt.Color(255, 255, 255));
         jBlogin.setText("Login");
         jBlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,11 +72,18 @@ public class Login extends javax.swing.JFrame {
         jTusuario.setColumns(4);
 
         bGtipo.add(jRfuncionario);
+        jRfuncionario.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jRfuncionario.setForeground(new java.awt.Color(51, 51, 51));
         jRfuncionario.setText("Funcionário");
 
         bGtipo.add(jRcliente);
+        jRcliente.setFont(new java.awt.Font("Sitka Text", 0, 12)); // NOI18N
+        jRcliente.setForeground(new java.awt.Color(51, 51, 51));
         jRcliente.setText("Cliente");
 
+        jBcadastrar.setBackground(new java.awt.Color(0, 0, 0));
+        jBcadastrar.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        jBcadastrar.setForeground(new java.awt.Color(255, 255, 255));
         jBcadastrar.setText("Cadastrar");
         jBcadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,40 +109,38 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(272, 272, 272)
+                        .addGap(263, 263, 263)
                         .addComponent(jLerro, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
+                        .addGap(107, 107, 107)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(100, 100, 100)
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTusuario)
-                                    .addComponent(jPsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
-                                .addComponent(jLabel4))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jRfuncionario)
-                                .addGap(85, 85, 85)
-                                .addComponent(jRcliente))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(102, 102, 102)
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jBcadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jBlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(184, Short.MAX_VALUE))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(100, 100, 100)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTusuario)
+                            .addComponent(jPsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel4))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBcadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(jRfuncionario)
+                        .addGap(85, 85, 85)
+                        .addComponent(jRcliente)))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(72, 72, 72)
                 .addComponent(jLabel4)
-                .addGap(35, 35, 35)
+                .addGap(55, 55, 55)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
@@ -140,81 +149,28 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jPsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(50, 50, 50)
+                .addGap(46, 46, 46)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRfuncionario)
                     .addComponent(jRcliente))
-                .addGap(41, 41, 41)
+                .addGap(40, 40, 40)
                 .addComponent(jBlogin)
                 .addGap(18, 18, 18)
                 .addComponent(jBcadastrar)
-                .addGap(60, 60, 60)
+                .addGap(46, 46, 46)
                 .addComponent(jLerro, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
-
-        jMenu_func.setText("Funcionário");
-        jMenu_func.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_funcMenuSelected(evt);
-            }
-        });
-        jMenu_func.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_funcActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_func);
-
-        jMenu_cliente.setText("Cliente");
-        jMenu_cliente.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_clienteMenuSelected(evt);
-            }
-        });
-        jMenu_cliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_clienteActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_cliente);
-
-        jMenu_sair.setText("Sair");
-        jMenu_sair.addMenuListener(new javax.swing.event.MenuListener() {
-            public void menuCanceled(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuDeselected(javax.swing.event.MenuEvent evt) {
-            }
-            public void menuSelected(javax.swing.event.MenuEvent evt) {
-                jMenu_sairMenuSelected(evt);
-            }
-        });
-        jMenu_sair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu_sairActionPerformed(evt);
-            }
-        });
-        jMenu.add(jMenu_sair);
-
-        setJMenuBar(jMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
         );
 
         pack();
@@ -229,9 +185,15 @@ public class Login extends javax.swing.JFrame {
             boolean login = f.login(String.valueOf(jPsenha.getPassword()));
 
             if (login) {
-                FuncionarioMenu ftela = new FuncionarioMenu();
-                ftela.setVisible(true);                
-                this.dispose();
+                try {
+                    Funcionario funcionariologado = FuncionarioDAO.findByUser(f.getUser_usuario());
+                    FuncionarioMenu ftela = new FuncionarioMenu(funcionariologado);                    
+                    ftela.setVisible(true);
+                    this.dispose();
+                    
+                } catch (Exception ex) {
+                    Logger.getLogger(Login2.class.getName()).log(Level.SEVERE, null, ex);
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "O login falhou! Verifique a senha e usuário inserido.");
             }
@@ -250,7 +212,7 @@ public class Login extends javax.swing.JFrame {
                     this.dispose();
                     
                 } catch (Exception ex) {
-                    Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Login2.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 
             } else {
@@ -266,49 +228,18 @@ public class Login extends javax.swing.JFrame {
         jPsenha.setText("");
         jTusuario.requestFocus();
     }//GEN-LAST:event_jBloginActionPerformed
-
-    private void jMenu_clienteMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_clienteMenuSelected
-        // TODO add your handling code here:
-        //ClienteMenu c = new ClienteMenu();
-        //c.setVisible(true);
-        //this.dispose();
-    }//GEN-LAST:event_jMenu_clienteMenuSelected
     
-    private void jMenu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_clienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu_clienteActionPerformed
-
-    private void jMenu_sairMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_sairMenuSelected
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_jMenu_sairMenuSelected
-
-    private void jMenu_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_sairActionPerformed
-
-    }//GEN-LAST:event_jMenu_sairActionPerformed
-
-    private void jMenu_funcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_funcActionPerformed
-
-    }//GEN-LAST:event_jMenu_funcActionPerformed
-
-    private void jMenu_funcMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu_funcMenuSelected
-        // TODO add your handling code here:
-        FuncionarioMenu f = new FuncionarioMenu();
-        f.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenu_funcMenuSelected
-
     private void jBcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcadastrarActionPerformed
-        CadCliente cad = new CadCliente();
-        cad.setVisible(true);
-        this.dispose();
+//        CadCliente cad = new CadCliente();
+//        cad.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_jBcadastrarActionPerformed
 
     //@param args the command line arguments
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new Login2().setVisible(true);
             }
         });  
     }
@@ -322,12 +253,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLerro;
-    private javax.swing.JMenuBar jMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenu jMenu_cliente;
-    private javax.swing.JMenu jMenu_func;
-    private javax.swing.JMenu jMenu_sair;
     private javax.swing.JPasswordField jPsenha;
     private javax.swing.JRadioButton jRcliente;
     private javax.swing.JRadioButton jRfuncionario;

@@ -156,38 +156,38 @@ public class FuncionarioAlterar extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        AlterarDados frame = new AlterarDados();
-        frame.setVisible(true);
-        this.dispose();
+//        AlterarDados frame = new AlterarDados();
+//        frame.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    try {
-    Funcionario f = new Funcionario();
-    FuncionarioDAO d = new FuncionarioDAO();
+//    try {
+//    Funcionario f = new Funcionario();
+//    FuncionarioDAO d = new FuncionarioDAO();
+//
+//    f.setId_usuario(Integer.valueOf(jTidF.getText())); 
+//    f.setTelefone_usuario(jTtelF.getText());                   
+//    f.setCodigo_funcionario(jTcodigoF.getText());      
+//    f.setCargo(jTcargoF.getText());                               
+//    f.setEndereco_usuario(jTendF.getText());                  
+//
+//    d.editarFuncionario(f);
+//
+//    jTidF.setText("");
+//    jTtelF.setText("");
+//    jTcodigoF.setText("");
+//    jTcargoF.setText("");
+//    jTendF.setText(""); 
+//    jTidF.requestFocus();
 
-    f.setId_usuario(Integer.valueOf(jTidF.getText())); 
-    f.setTelefone_usuario(jTtelF.getText());                   
-    f.setCodigo_funcionario(jTcodigoF.getText());      
-    f.setCargo(jTcargoF.getText());                               
-    f.setEndereco_usuario(jTendF.getText());                  
-
-    d.editarFuncionario(f);
-
-    jTidF.setText("");
-    jTtelF.setText("");
-    jTcodigoF.setText("");
-    jTcargoF.setText("");
-    jTendF.setText(""); 
-    jTidF.requestFocus();
-
-    JOptionPane.showMessageDialog(this, "Funcionário alterado com sucesso!");
-
-} catch (Exception e) {
-    System.out.println("Erro: " + e.getMessage());
-    e.printStackTrace();
-}
+//    JOptionPane.showMessageDialog(this, "Funcionário alterado com sucesso!");
+//
+//} catch (Exception e) {
+//    System.out.println("Erro: " + e.getMessage());
+//    e.printStackTrace();
+//}
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -217,6 +217,7 @@ public class FuncionarioAlterar extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FuncionarioAlterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
