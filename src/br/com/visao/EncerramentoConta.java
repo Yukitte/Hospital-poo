@@ -24,7 +24,7 @@ public class EncerramentoConta extends javax.swing.JFrame {
  
     public EncerramentoConta(Funcionario user) {
         initComponents();
-        
+        setExtendedState(MAXIMIZED_BOTH);
         this.userlogado = user;
     }
 
@@ -32,6 +32,7 @@ public class EncerramentoConta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTnumero = new javax.swing.JTextField();
@@ -49,6 +50,9 @@ public class EncerramentoConta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Numero da conta a ser encerrada:");
 
         jBbuscar.setText("Buscar");
@@ -91,6 +95,7 @@ public class EncerramentoConta extends javax.swing.JFrame {
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Encerrar esta conta?");
 
         jButton1.setBackground(new java.awt.Color(255, 153, 153));
@@ -108,9 +113,11 @@ public class EncerramentoConta extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Resultado da busca:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Encerramento de conta");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -118,35 +125,32 @@ public class EncerramentoConta extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addGap(168, 168, 168))
-                        .addComponent(jPbusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTnumero, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(42, 42, 42)
-                            .addComponent(jBbuscar))
-                        .addComponent(jLabel3)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(110, 110, 110)
-                            .addComponent(jButton1)
-                            .addGap(39, 39, 39)
-                            .addComponent(jButton2)))
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(63, 63, 63)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton2))
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTnumero, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jBbuscar))
+                    .addComponent(jPbusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel4)
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTnumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,85 +159,102 @@ public class EncerramentoConta extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPbusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
-        try {
-         
-            Conta conta = userlogado.consultarDadosConta(Integer.parseInt(jTnumero.getText()));
-            
-            if (conta instanceof ContaCorrente) {
-                ContaCorrente cc = (ContaCorrente) conta;
-                Cliente cliente = cc.getCliente();
-                
-                jLclientenome.setText("Nome: " + cliente.getNome_usuario());
-                jLclientecpf.setText("CPF: " + cliente.getCpf_usuario());
-                jLtipo.setText("Tipo: Poupança");
-                jLsaldo.setText(String.valueOf(cc.getSaldo_conta()));
-                                    
-            } else if (conta instanceof ContaPoupanca) {
-                ContaPoupanca cp = (ContaPoupanca) conta;
-                
-                Cliente cliente = cp.getCliente();
-                
-                jLclientenome.setText("Titular: " + cliente.getNome_usuario());
-                jLclientecpf.setText("CPF: " + cliente.getCpf_usuario());
-                jLtipo.setText("Tipo: Corrente");
-                jLsaldo.setText("Saldo: " + String.valueOf(cp.getSaldo_conta()));
-            }
-            
-            
-        } catch (Exception ex) {
-            Logger.getLogger(EncerramentoConta.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jBbuscarActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String inputSenha = JOptionPane.showInputDialog(jPanel1, "Digite a senha de administrador para encerrra a conta", 
-            "Confirmar o encerramento de conta", JOptionPane.INFORMATION_MESSAGE);
-        System.out.print(" "+ inputSenha);
-        
-        if (inputSenha != null) {
-            String senha = JOptionPane.showInputDialog(jPanel1, "Digite a senha para continuar.", "Confimar", JOptionPane.INFORMATION_MESSAGE);
-
-            //if (senha == senhaadministrador) {
-                ContaDAO.delete(Integer.valueOf(jTnumero.getText()));
-            //} else { 
-            //erro senha incorreta
-            //}
-        } else {
-            JOptionPane.showMessageDialog(jPanel1, "O campo não deve estar vazio!", "Campo vazio inválido!", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         FuncionarioMenu frame = new FuncionarioMenu(userlogado);
         frame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String inputSenha = JOptionPane.showInputDialog(jPanel1, "Digite a senha de administrador para encerrra a conta",
+            "Confirmar o encerramento de conta", JOptionPane.INFORMATION_MESSAGE);
+        System.out.print(" "+ inputSenha);
+
+        if (inputSenha != null) {
+            String senha = JOptionPane.showInputDialog(jPanel1, "Digite a senha para continuar.", "Confimar", JOptionPane.INFORMATION_MESSAGE);
+
+            //if (senha == senhaadministrador) {
+                ContaDAO.delete(Integer.valueOf(jTnumero.getText()));
+                //} else {
+                //erro senha incorreta
+                //}
+        } else {
+            JOptionPane.showMessageDialog(jPanel1, "O campo não deve estar vazio!", "Campo vazio inválido!", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
+        try {
+
+            Conta conta = userlogado.consultarDadosConta(Integer.parseInt(jTnumero.getText()));
+
+            if (conta instanceof ContaCorrente) {
+                ContaCorrente cc = (ContaCorrente) conta;
+                Cliente cliente = cc.getCliente();
+
+                jLclientenome.setText("Nome: " + cliente.getNome_usuario());
+                jLclientecpf.setText("CPF: " + cliente.getCpf_usuario());
+                jLtipo.setText("Tipo: Poupança");
+                jLsaldo.setText(String.valueOf(cc.getSaldo_conta()));
+
+            } else if (conta instanceof ContaPoupanca) {
+                ContaPoupanca cp = (ContaPoupanca) conta;
+
+                Cliente cliente = cp.getCliente();
+
+                jLclientenome.setText("Titular: " + cliente.getNome_usuario());
+                jLclientecpf.setText("CPF: " + cliente.getCpf_usuario());
+                jLtipo.setText("Tipo: Corrente");
+                jLsaldo.setText("Saldo: " + String.valueOf(cp.getSaldo_conta()));
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(EncerramentoConta.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBbuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,6 +305,7 @@ public class EncerramentoConta extends javax.swing.JFrame {
     private javax.swing.JLabel jLsaldo;
     private javax.swing.JLabel jLtipo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPbusca;
     private javax.swing.JTextField jTnumero;
     // End of variables declaration//GEN-END:variables
