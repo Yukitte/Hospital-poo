@@ -13,12 +13,13 @@ import javax.swing.JOptionPane;
  * @author juhga
  */
 public class FuncionarioAlterar extends javax.swing.JFrame {
-
+    private final Funcionario userlogado;
     /**
      * Creates new form FuncionarioAlterar
      */
-    public FuncionarioAlterar() {
+    public FuncionarioAlterar(Funcionario user) {
         initComponents();
+        this.userlogado = user;
         setExtendedState(MAXIMIZED_BOTH);
     }
 
@@ -204,7 +205,7 @@ public class FuncionarioAlterar extends javax.swing.JFrame {
 //    jTcargoF.setText("");
 //    jTendF.setText(""); 
 //    jTidF.requestFocus();
-
+//
 //    JOptionPane.showMessageDialog(this, "Funcionário alterado com sucesso!");
 //
 //} catch (Exception e) {
@@ -246,7 +247,7 @@ public class FuncionarioAlterar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FuncionarioAlterar().setVisible(true);
+//                new FuncionarioAlterar().setVisible(true);
             }
         });
     }

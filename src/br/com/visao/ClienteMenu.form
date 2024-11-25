@@ -71,8 +71,6 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="2" attributes="0">
                       <Component id="jLsaudacao" alignment="2" min="-2" pref="169" max="-2" attributes="0"/>
-                      <Component id="jBsair" alignment="2" min="-2" pref="90" max="-2" attributes="0"/>
-                      <Component id="jTBmostrarsaldo" alignment="2" min="-2" pref="146" max="-2" attributes="0"/>
                       <Group type="102" alignment="2" attributes="0">
                           <Component id="jBdeposito" min="-2" pref="102" max="-2" attributes="0"/>
                           <EmptySpace min="36" pref="36" max="36" attributes="0"/>
@@ -80,7 +78,9 @@
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jBsaque" min="-2" pref="90" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jBsair" alignment="2" min="-2" pref="90" max="-2" attributes="0"/>
                       <Component id="jLsaldo" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTBmostrarsaldo" alignment="2" min="-2" pref="146" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="114" max="32767" attributes="0"/>
               </Group>

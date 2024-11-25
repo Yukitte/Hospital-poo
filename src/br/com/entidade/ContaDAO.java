@@ -416,5 +416,82 @@ public class ContaDAO {
         
         return confirma;
     }
+
+        public static boolean alterarUsuario(ContaCorrente usuario) {
+        String sql = "UPDATE Usuario SET nome = ?, email = ? WHERE id = ?";
+        PreparedStatement stmt = null;
+        
+        try (Connection con = DAO.conectar()){
+            // Prepara o comando SQL
+            PreparedStatement pst = con.prepareStatement(sql);
+            
+            // Define os valores dos parâmetros
+            stmt.setInt(1, usuario.getNumero_conta());
+            stmt.setDouble(2, usuario.getLimite());
+            int dataVencimentoInt = convertLocalDateToInt(usuario.getDataVencimento());
+            stmt.setInt(3, dataVencimentoInt);  
+            
+            
+
+            // Executa o comando
+            int rowsUpdated = stmt.executeUpdate();
+
+            // Retorna true se ao menos uma linha foi alterada
+            return rowsUpdated > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false; // Retorna false em caso de erro
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } 
+        
+}public static int convertLocalDateToInt(LocalDate date) {
+        return date.getYear() * 10000 + date.getMonthValue() * 100 + date.getDayOfMonth();
+    }
 }
+//public class editarContaCorrente{
+//             public boolean alterarUsuario(ContaCorrente usuario) {
+//        String sql = "UPDATE Usuario SET nome = ?, email = ? WHERE id = ?";
+//        PreparedStatement stmt = null;
+//
+//        try (Connection con = DAO.conectar()){
+//            // Prepara o comando SQL
+//            PreparedStatement pst = con.prepareStatement(sql);
+//            
+//            // Define os valores dos parâmetros
+//            stmt.setInt(1, usuario.getNumero_conta());
+//            stmt.setDouble(2, usuario.getLimite());
+//            stmt.setInt(3, usuario.getDataVencimento());
+//            
+//
+//            // Executa o comando
+//            int rowsUpdated = stmt.executeUpdate();
+//
+//            // Retorna true se ao menos uma linha foi alterada
+//            return rowsUpdated > 0;
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            return false; // Retorna false em caso de erro
+//        } finally {
+//            try {
+//                if (stmt != null) {
+//                    stmt.close();
+//                }
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        }
+//    }
+
+
+
         

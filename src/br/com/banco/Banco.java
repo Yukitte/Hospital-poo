@@ -7,7 +7,7 @@ public class Banco {
 	
     //private static String nome = "Banco Malvader";
     public static void main(String[] args) {
-        Login2 frame = new Login2(userlogado);
+        Login2 frame = new Login2();
         frame.setVisible(true);
     }
 }

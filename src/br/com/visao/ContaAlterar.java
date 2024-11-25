@@ -6,6 +6,7 @@ package br.com.visao;
 
 import br.com.controle.Conta;
 import br.com.controle.ContaCorrente;
+import br.com.controle.Funcionario;
 import br.com.entidade.ContaDAO;
 
 /**
@@ -13,12 +14,13 @@ import br.com.entidade.ContaDAO;
  * @author juhga
  */
 public class ContaAlterar extends javax.swing.JFrame {
-
+    private final Funcionario userlogado;
     /**
      * Creates new form ContaAlterar
      */
-    public ContaAlterar() {
+    public ContaAlterar(Funcionario user) {
         initComponents();
+        this.userlogado = user;
         setExtendedState(MAXIMIZED_BOTH);
     }
 
@@ -69,6 +71,12 @@ public class ContaAlterar extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Id:");
+
+        jTlimite.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTlimiteActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Voltar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -156,22 +164,26 @@ public class ContaAlterar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//  try {
-//    ContaCorrente c = new ContaCorrente();
-//    ContaDAO b = new ContaDAO();
-//    c.setNumero_conta(Integer.valueOf(jTidconta.getText())); 
-//    jTlimite.setText(String.valueOf(c.getLimite())); 
-//    jTdatavencimento.setText(c.getDataVencimento().toString()); 
-//    b.editarContaCorrente(c);
-//    
-//    jTlimite.setText("");
-//    jTdatavencimento.setText("");
-//    jTidconta.setText("");
-//    jTidconta.requestFocus();
-//} catch (Exception e) {
-//    System.out.println("Erro: " + e.getMessage());
-//}
+  try {
+    ContaCorrente c = new ContaCorrente();
+    ContaDAO b = new ContaDAO();
+    c.setNumero_conta(Integer.valueOf(jTidconta.getText())); 
+    jTlimite.setText(String.valueOf(c.getLimite())); 
+    jTdatavencimento.setText(c.getDataVencimento().toString()); 
+    b.alterarUsuario(c);
+    
+    jTlimite.setText("");
+    jTdatavencimento.setText("");
+    jTidconta.setText("");
+    jTidconta.requestFocus();
+} catch (Exception e) {
+    System.out.println("Erro: " + e.getMessage());
+}
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTlimiteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTlimiteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTlimiteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,7 +216,7 @@ public class ContaAlterar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ContaAlterar().setVisible(true);
+//                new ContaAlterar().setVisible(true);
             }
         });
     }
